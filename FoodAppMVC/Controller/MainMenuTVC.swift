@@ -7,8 +7,11 @@
 
 import UIKit
 
+let showItemsSegue = "showItemsSegue"
+
 class MainMenuTVC: UITableViewController {
 
+    
     var menuItemsArray: [MenuItem] = [MenuItem(name: "Pizza", imageName: "pizza-category"),
                                       MenuItem(name: "Breakfast", imageName: "breakfast-category"),
                                       MenuItem(name: "Sushi", imageName: "sushi-category"),
@@ -17,7 +20,6 @@ class MainMenuTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -47,14 +49,24 @@ class MainMenuTVC: UITableViewController {
         return 120
     }
     
-    /*
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("row selected")
+        let menuItem = menuItemsArray[indexPath.row]
+        self.performSegue(withIdentifier: showItemsSegue, sender: menuItem)
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == showItemsSegue {
+            if let itemsCVC = segue.destination as? ItemsCollectionVC {
+                if let menuItem = sender as? MenuItem {
+                    print("1")
+                    itemsCVC.menuCategory = menuItem
+                }
+            }
+        }
     }
-    */
 
 }

@@ -3,15 +3,17 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main MenuTVC-->
+        <!--Menu-->
         <scene sceneID="cFB-Du-eI6">
             <objects>
                 <tableViewController id="7Zn-rd-ifQ" customClass="MainMenuTVC" customModule="FoodAppMVC" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="645-Th-49u">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="645-Th-49u">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -57,34 +59,116 @@
                             <outlet property="delegate" destination="7Zn-rd-ifQ" id="GXz-SE-6IH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="IW6-Wb-Kag"/>
+                    <navigationItem key="navigationItem" title="Menu" id="IW6-Wb-Kag"/>
+                    <connections>
+                        <segue destination="15b-gv-VzJ" kind="show" identifier="showItemsSegue" id="TGl-PT-V8O"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rmf-1G-b9e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1941.2213740458014" y="6.3380281690140849"/>
+            <point key="canvasLocation" x="1789" y="-254"/>
+        </scene>
+        <!--Items CollectionVC-->
+        <scene sceneID="702-Wx-8O3">
+            <objects>
+                <collectionViewController id="15b-gv-VzJ" customClass="ItemsCollectionVC" customModule="FoodAppMVC" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="G0Y-k5-hx6">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bP2-df-oqQ">
+                            <size key="itemSize" width="136" height="213"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="itemCell" id="E9z-4P-Mf6" customClass="ItemCell" customModule="FoodAppMVC" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="136" height="213"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VRq-2U-H4l">
+                                    <rect key="frame" x="0.0" y="0.0" width="136" height="213"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Cb-VW-ej5">
+                                            <rect key="frame" x="8" y="8" width="120" height="120"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="120" id="uta-Ww-m1E"/>
+                                                <constraint firstAttribute="height" constant="120" id="zT1-vi-4Wn"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VA3-or-faK">
+                                            <rect key="frame" x="8" y="136" width="120" height="48"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lE4-eG-sgm">
+                                            <rect key="frame" x="8" y="190" width="120" height="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="15" id="vRr-eF-C6A"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="lE4-eG-sgm" secondAttribute="trailing" constant="8" id="EKa-5Z-QM4"/>
+                                        <constraint firstAttribute="bottom" secondItem="lE4-eG-sgm" secondAttribute="bottom" constant="8" id="HGD-K3-419"/>
+                                        <constraint firstAttribute="trailing" secondItem="VA3-or-faK" secondAttribute="trailing" constant="8" id="ME6-u2-ewp"/>
+                                        <constraint firstItem="0Cb-VW-ej5" firstAttribute="leading" secondItem="VRq-2U-H4l" secondAttribute="leading" constant="8" id="QvX-6j-lcy"/>
+                                        <constraint firstItem="lE4-eG-sgm" firstAttribute="leading" secondItem="VRq-2U-H4l" secondAttribute="leading" constant="8" id="Ryu-Bh-3nG"/>
+                                        <constraint firstItem="VA3-or-faK" firstAttribute="leading" secondItem="VRq-2U-H4l" secondAttribute="leading" constant="8" id="TLl-hk-FAq"/>
+                                        <constraint firstItem="lE4-eG-sgm" firstAttribute="top" secondItem="VA3-or-faK" secondAttribute="bottom" constant="6" id="cOQ-yv-uQg"/>
+                                        <constraint firstItem="0Cb-VW-ej5" firstAttribute="top" secondItem="VRq-2U-H4l" secondAttribute="top" constant="8" id="mpI-T1-I1D"/>
+                                        <constraint firstItem="VA3-or-faK" firstAttribute="top" secondItem="0Cb-VW-ej5" secondAttribute="bottom" constant="8" symbolic="YES" id="vsW-0X-mSM"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="136" height="213"/>
+                                <connections>
+                                    <outlet property="itemImageView" destination="0Cb-VW-ej5" id="uLM-8q-fwM"/>
+                                    <outlet property="itemNameLabel" destination="lE4-eG-sgm" id="VB4-hz-51y"/>
+                                    <outlet property="itemPriceLabel" destination="lE4-eG-sgm" id="tqN-hc-d54"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="15b-gv-VzJ" id="MuP-HG-7hL"/>
+                            <outlet property="delegate" destination="15b-gv-VzJ" id="5bW-X2-2tJ"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="ygO-4O-kBu"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ImW-U9-4Mm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2574.8091603053435" y="-254.22535211267606"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Awz-4l-8Ic">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Zhn-PS-ftM" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Zhn-PS-ftM" customClass="TabBarController" customModule="FoodAppMVC" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="fill" id="SV0-yb-Gap">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="60d-1I-SVw" kind="relationship" relationship="viewControllers" id="2Tk-z4-lpg"/>
                         <segue destination="gjh-sJ-bip" kind="relationship" relationship="viewControllers" id="rS6-0S-GkB"/>
+                        <segue destination="UVw-oK-gSS" kind="relationship" relationship="viewControllers" id="OPZ-sV-1Uv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i58-5D-Wf5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="87.786259541984734" y="6.3380281690140849"/>
+            <point key="canvasLocation" x="48" y="467"/>
         </scene>
-        <!--Item-->
+        <!--Menu-->
         <scene sceneID="ePb-hk-qKB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gjh-sJ-bip" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="19n-CX-xyq"/>
+                    <tabBarItem key="tabBarItem" title="Menu" id="19n-CX-xyq"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="302-9X-4Zv">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -97,12 +181,101 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2x-ho-mtm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1014.5038167938931" y="6.3380281690140849"/>
+            <point key="canvasLocation" x="1030" y="-254"/>
+        </scene>
+        <!--My Cart-->
+        <scene sceneID="jM6-0p-mTk">
+            <objects>
+                <tableViewController id="a33-ai-b0A" customClass="CartTVC" customModule="FoodAppMVC" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="WUl-nx-HLp">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cartItemCell" id="l8S-W8-Lmb">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l8S-W8-Lmb" id="lzK-sv-uhA">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="a33-ai-b0A" id="O4L-Xw-Ua0"/>
+                            <outlet property="delegate" destination="a33-ai-b0A" id="YAf-LI-mAK"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="My Cart" id="Qwk-sv-AJV"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9In-LV-umz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1789" y="391"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="vZ1-56-AFl">
+            <objects>
+                <viewController id="hwG-Q2-2GG" customClass="ProfileVC" customModule="FoodAppMVC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oy6-Xd-UXO">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="qFi-ba-MfW"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Profile" id="VRQ-vP-BaD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pz8-rT-HEh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1789" y="1056"/>
+        </scene>
+        <!--My Order-->
+        <scene sceneID="78x-bF-XFX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UVw-oK-gSS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Order" id="imK-HX-MIG"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NPF-7t-qtJ">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="a33-ai-b0A" kind="relationship" relationship="rootViewController" id="43d-Es-2sf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kSk-S2-piC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1030" y="391"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="2t4-Rp-2QU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="60d-1I-SVw" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" id="gMT-0t-H0L"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e5h-IL-tOu">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hwG-Q2-2GG" kind="relationship" relationship="rootViewController" id="MYU-h0-QV3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ivq-xg-54I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1030" y="1056"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
