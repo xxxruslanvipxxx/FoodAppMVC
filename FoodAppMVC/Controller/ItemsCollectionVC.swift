@@ -10,6 +10,9 @@ import UIKit
 private let reuseIdentifier = "itemCell"
 
 class ItemsCollectionVC: UICollectionViewController {
+    
+    let edgeInset: Double = 10
+    let numberOfCellsInRow = 2
 
     var itemsArray: [Item] = [Item(name: "Absolut Emo", imageName: "absolut-emo", price: 20),
                               Item(name: "Egizonskiy blin", imageName: "blin-egizon", price: 35),
@@ -91,4 +94,34 @@ class ItemsCollectionVC: UICollectionViewController {
     }
     */
 
+}
+
+extension ItemsCollectionVC: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        UIEdgeInsets(top: CGFloat(edgeInset),
+                     left: CGFloat(edgeInset),
+                     bottom: CGFloat(edgeInset),
+                     right: CGFloat(edgeInset))
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return CGFloat(edgeInset)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let screenWidth = Double(view.window?.windowScene?.screen.bounds.width ?? 1)
+        print(screenWidth)
+        let totalCellWidth = screenWidth - (edgeInset * Double((numberOfCellsInRow + 1)))
+        let width = totalCellWidth / Double(numberOfCellsInRow)
+        let height = width * 1.5
+        
+        return CGSize(width: width, height: height)
+        
+    }
+    
+    
+    
 }
