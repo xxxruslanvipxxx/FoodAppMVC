@@ -17,12 +17,13 @@ class ItemCell: UICollectionViewCell {
     
     var item: Item? {
         didSet {
-            print(3)
             if let imageName = item?.imageName {
                 itemImageView.image = UIImage(named: imageName)
             }
             itemNameLabel.text = item?.name
             itemPriceLabel.text = "\(currency) \(item?.price ?? 0)"
+            
+            self.backgroundColor = .yellow
         }
     }
 }

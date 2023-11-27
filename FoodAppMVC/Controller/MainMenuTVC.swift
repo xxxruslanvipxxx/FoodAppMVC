@@ -41,6 +41,8 @@ class MainMenuTVC: UITableViewController {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath) as? MainMenuCell {
             let item = menuItemsArray[indexPath.item]
             cell.menuItem = item
+            
+            return cell
         }
         return UITableViewCell()
     }
@@ -62,7 +64,6 @@ class MainMenuTVC: UITableViewController {
         if segue.identifier == showItemsSegue {
             if let itemsCVC = segue.destination as? ItemsCollectionVC {
                 if let menuItem = sender as? MenuItem {
-                    print("1")
                     itemsCVC.menuCategory = menuItem
                 }
             }
