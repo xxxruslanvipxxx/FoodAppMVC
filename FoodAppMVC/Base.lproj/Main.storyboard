@@ -134,6 +134,7 @@
                                     <outlet property="itemImageView" destination="0Cb-VW-ej5" id="uLM-8q-fwM"/>
                                     <outlet property="itemNameLabel" destination="VA3-or-faK" id="WoT-3c-WDa"/>
                                     <outlet property="itemPriceLabel" destination="lE4-eG-sgm" id="qXa-1a-xt6"/>
+                                    <segue destination="g8b-sg-DQm" kind="showDetail" id="hBM-DW-Osh"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -148,19 +149,63 @@
             </objects>
             <point key="canvasLocation" x="2574.8091603053435" y="-254.22535211267606"/>
         </scene>
+        <!--DetailVC-->
+        <scene sceneID="qL9-wx-jit">
+            <objects>
+                <viewController id="g8b-sg-DQm" customClass="DetailVC" customModule="FoodAppMVC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I1K-ns-Abb">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZIv-Gf-Mii">
+                                <rect key="frame" x="16" y="60" width="361" height="361"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ZIv-Gf-Mii" secondAttribute="height" id="AQl-8x-8HJ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXi-ci-JmE">
+                                <rect key="frame" x="16" y="429" width="361" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Pch-zE-Gyu"/>
+                        <color key="backgroundColor" name="AppColor"/>
+                        <constraints>
+                            <constraint firstItem="ZIv-Gf-Mii" firstAttribute="centerX" secondItem="I1K-ns-Abb" secondAttribute="centerX" id="1J8-UK-qbS"/>
+                            <constraint firstItem="ZIv-Gf-Mii" firstAttribute="leading" secondItem="Pch-zE-Gyu" secondAttribute="leading" constant="16" id="IVK-6g-CUe"/>
+                            <constraint firstItem="ZIv-Gf-Mii" firstAttribute="top" secondItem="Pch-zE-Gyu" secondAttribute="top" constant="60" id="UBi-De-T0v"/>
+                            <constraint firstItem="nXi-ci-JmE" firstAttribute="leading" secondItem="Pch-zE-Gyu" secondAttribute="leading" constant="16" id="fEH-eA-VtG"/>
+                            <constraint firstItem="nXi-ci-JmE" firstAttribute="top" secondItem="ZIv-Gf-Mii" secondAttribute="bottom" constant="8" symbolic="YES" id="muU-U9-4XI"/>
+                            <constraint firstItem="Pch-zE-Gyu" firstAttribute="trailing" secondItem="ZIv-Gf-Mii" secondAttribute="trailing" constant="16" id="otn-lM-sSt"/>
+                            <constraint firstItem="nXi-ci-JmE" firstAttribute="centerX" secondItem="I1K-ns-Abb" secondAttribute="centerX" id="pcj-ea-PNt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailImageView" destination="ZIv-Gf-Mii" id="IMz-BP-lx3"/>
+                        <outlet property="detailLabel" destination="nXi-ci-JmE" id="zdI-Cu-kdC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q2N-Sf-JE5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3435.8778625954196" y="-254.22535211267606"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Awz-4l-8Ic">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Zhn-PS-ftM" customClass="TabBarController" customModule="FoodAppMVC" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" alpha="0.80000000000000004" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" itemPositioning="fill" id="SV0-yb-Gap">
+                    <tabBar key="tabBar" alpha="0.80000000000000004" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" itemPositioning="fill" id="SV0-yb-Gap">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="AppColor"/>
                         <color key="tintColor" name="AccentColor"/>
-                        <color key="barTintColor" name="AppColor"/>
                         <color key="selectedImageTintColor" name="AccentColor"/>
                         <tabBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" name="AppColor"/>
+                        </tabBarAppearance>
+                        <tabBarAppearance key="scrollEdgeAppearance">
                             <color key="backgroundColor" name="AppColor"/>
                         </tabBarAppearance>
                     </tabBar>
@@ -183,7 +228,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="302-9X-4Zv">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.94901967050000002" green="0.80392158030000005" blue="0.42745098469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="AppColor"/>
+                        <color key="barTintColor" name="AppColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -248,7 +294,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NPF-7t-qtJ">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.94901967050000002" green="0.80392158030000005" blue="0.42745098469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="AppColor"/>
+                        <color key="barTintColor" name="AppColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -268,7 +315,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="e5h-IL-tOu">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.94901967050000002" green="0.80392158030000005" blue="0.42745098469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" name="AppColor"/>
+                        <color key="barTintColor" name="AppColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -285,10 +333,10 @@
         <image name="menucard.fill" catalog="system" width="105" height="128"/>
         <image name="person.crop.square.fill" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">
-            <color red="0.73924732208251953" green="0.036920364946126938" blue="0.2523101270198822" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.85089045763015747" green="0.064264118671417236" blue="0.2523101270198822" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="AppColor">
-            <color red="1" green="0.84072577953338623" blue="0.43304771505376344" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.16862745098039217" green="0.078431372549019607" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		145D38362B17EEB000C3DAA1 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145D38352B17EEB000C3DAA1 /* DetailVC.swift */; };
 		14C7060E2B0E4EAF006DA3D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C7060D2B0E4EAF006DA3D0 /* AppDelegate.swift */; };
 		14C706102B0E4EAF006DA3D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C7060F2B0E4EAF006DA3D0 /* SceneDelegate.swift */; };
 		14C706152B0E4EAF006DA3D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C706132B0E4EAF006DA3D0 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		145D38352B17EEB000C3DAA1 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		14C7060A2B0E4EAF006DA3D0 /* FoodAppMVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodAppMVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C7060D2B0E4EAF006DA3D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14C7060F2B0E4EAF006DA3D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				14C706212B0E513A006DA3D0 /* MainMenuTVC.swift */,
 				14E8DC472B0FC21000FD0A17 /* ItemsCollectionVC.swift */,
 				14E8DC412B0FAD4F00FD0A17 /* CartTVC.swift */,
+				145D38352B17EEB000C3DAA1 /* DetailVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				14E8DC422B0FAD4F00FD0A17 /* CartTVC.swift in Sources */,
 				14E8DC442B0FAFFF00FD0A17 /* ProfileVC.swift in Sources */,
 				14E8DC4A2B0FC2C800FD0A17 /* ItemCell.swift in Sources */,
+				145D38362B17EEB000C3DAA1 /* DetailVC.swift in Sources */,
 				14C706102B0E4EAF006DA3D0 /* SceneDelegate.swift in Sources */,
 				14E8DC4C2B0FC4E900FD0A17 /* Item.swift in Sources */,
 				14C706222B0E513A006DA3D0 /* MainMenuTVC.swift in Sources */,
