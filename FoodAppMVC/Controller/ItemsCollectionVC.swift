@@ -19,7 +19,8 @@ class ItemsCollectionVC: UICollectionViewController {
                               Item(name: "Chern-Vkusn", imageName: "chern-vkusn", price: 49),
                               Item(name: "Gribnoe Jele", imageName: "jele-grib", price: 25),
                               Item(name: "Kreslishi", imageName: "kreslishi", price: 15),
-                              Item(name: "Zelenie Pirogi", imageName: "zelen-pirogi", price: 28)]
+                              Item(name: "Zelenie Pirogi", imageName: "zelen-pirogi", price: 28),
+                              Item(name: "Chern-Vkusn", imageName: "chern-vkusn", price: 49)]
     
     var menuCategory: MenuItem?
     

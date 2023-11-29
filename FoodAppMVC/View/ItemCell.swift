@@ -22,8 +22,6 @@ class ItemCell: UICollectionViewCell {
             }
             itemNameLabel.text = item?.name
             itemPriceLabel.text = "\(currency) \(item?.price ?? 0)"
-            
-            self.backgroundColor = .yellow
         }
     }
 }

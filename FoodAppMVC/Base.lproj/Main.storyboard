@@ -3,8 +3,8 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,9 +14,10 @@
             <objects>
                 <tableViewController id="7Zn-rd-ifQ" customClass="MainMenuTVC" customModule="FoodAppMVC" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="645-Th-49u">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="AppColor"/>
+                        <color key="sectionIndexBackgroundColor" name="AppColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="menuCell" rowHeight="120" id="VIx-O5-hch" customClass="MainMenuCell" customModule="FoodAppMVC" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="120"/>
@@ -48,6 +49,7 @@
                                         <constraint firstItem="Pcx-o0-A5y" firstAttribute="leading" secondItem="mXV-lI-JeZ" secondAttribute="trailing" constant="20" id="p0e-Fn-Gah"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" name="AppColor"/>
                                 <connections>
                                     <outlet property="menuImageView" destination="mXV-lI-JeZ" id="Jtx-Tf-nEp"/>
                                     <outlet property="menuLabel" destination="Pcx-o0-A5y" id="PlN-ff-2Xg"/>
@@ -73,9 +75,9 @@
             <objects>
                 <collectionViewController id="15b-gv-VzJ" customClass="ItemsCollectionVC" customModule="FoodAppMVC" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="G0Y-k5-hx6">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="AppColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kPa-M1-lCk">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -98,7 +100,7 @@
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VA3-or-faK">
                                             <rect key="frame" x="8" y="136" width="120" height="48"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -107,11 +109,12 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="15" id="vRr-eF-C6A"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" name="AppColor"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="lE4-eG-sgm" secondAttribute="trailing" constant="8" id="EKa-5Z-QM4"/>
                                         <constraint firstAttribute="bottom" secondItem="lE4-eG-sgm" secondAttribute="bottom" constant="8" id="HGD-K3-419"/>
@@ -125,6 +128,7 @@
                                         <constraint firstItem="VA3-or-faK" firstAttribute="top" secondItem="0Cb-VW-ej5" secondAttribute="bottom" constant="8" symbolic="YES" id="vsW-0X-mSM"/>
                                     </constraints>
                                 </collectionViewCellContentView>
+                                <color key="backgroundColor" name="AppColor"/>
                                 <size key="customSize" width="136" height="213"/>
                                 <connections>
                                     <outlet property="itemImageView" destination="0Cb-VW-ej5" id="uLM-8q-fwM"/>
@@ -149,10 +153,16 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Zhn-PS-ftM" customClass="TabBarController" customModule="FoodAppMVC" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="fill" id="SV0-yb-Gap">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                    <tabBar key="tabBar" alpha="0.80000000000000004" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" itemPositioning="fill" id="SV0-yb-Gap">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="AppColor"/>
+                        <color key="tintColor" name="AccentColor"/>
+                        <color key="barTintColor" name="AppColor"/>
+                        <color key="selectedImageTintColor" name="AccentColor"/>
+                        <tabBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" name="AppColor"/>
+                        </tabBarAppearance>
                     </tabBar>
                     <connections>
                         <segue destination="60d-1I-SVw" kind="relationship" relationship="viewControllers" id="2Tk-z4-lpg"/>
@@ -168,11 +178,12 @@
         <scene sceneID="ePb-hk-qKB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gjh-sJ-bip" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Menu" id="19n-CX-xyq"/>
+                    <tabBarItem key="tabBarItem" title="Menu" image="menucard.fill" catalog="system" id="19n-CX-xyq"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="302-9X-4Zv">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.94901967050000002" green="0.80392158030000005" blue="0.42745098469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -188,9 +199,9 @@
             <objects>
                 <tableViewController id="a33-ai-b0A" customClass="CartTVC" customModule="FoodAppMVC" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="WUl-nx-HLp">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                        <color key="backgroundColor" name="AppColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cartItemCell" id="l8S-W8-Lmb">
                                 <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
@@ -217,10 +228,10 @@
             <objects>
                 <viewController id="hwG-Q2-2GG" customClass="ProfileVC" customModule="FoodAppMVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oy6-Xd-UXO">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="qFi-ba-MfW"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" name="AppColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="VRQ-vP-BaD"/>
                 </viewController>
@@ -232,11 +243,12 @@
         <scene sceneID="78x-bF-XFX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UVw-oK-gSS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Order" id="imK-HX-MIG"/>
+                    <tabBarItem key="tabBarItem" title="My Order" image="cart.fill" catalog="system" id="imK-HX-MIG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NPF-7t-qtJ">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.94901967050000002" green="0.80392158030000005" blue="0.42745098469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -251,11 +263,12 @@
         <scene sceneID="2t4-Rp-2QU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="60d-1I-SVw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="gMT-0t-H0L"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.crop.square.fill" catalog="system" id="gMT-0t-H0L"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="e5h-IL-tOu">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.94901967050000002" green="0.80392158030000005" blue="0.42745098469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -268,14 +281,14 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <image name="menucard.fill" catalog="system" width="105" height="128"/>
+        <image name="person.crop.square.fill" catalog="system" width="128" height="114"/>
+        <namedColor name="AccentColor">
+            <color red="0.73924732208251953" green="0.036920364946126938" blue="0.2523101270198822" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="AppColor">
+            <color red="1" green="0.84072577953338623" blue="0.43304771505376344" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
     </resources>
 </document>
