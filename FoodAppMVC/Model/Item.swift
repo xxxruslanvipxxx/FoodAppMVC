@@ -10,6 +10,7 @@ import Foundation
 struct Item {
     var name: String?
     var imageName: String?
+    var description: String?
     var price: Int?
     var weight: Int?
 }

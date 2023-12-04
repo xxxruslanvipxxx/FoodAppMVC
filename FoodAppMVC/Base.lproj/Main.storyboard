@@ -198,6 +198,9 @@
                                                             </label>
                                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="2a0-8Y-RKv">
                                                                 <rect key="frame" x="0.0" y="25.333333333333371" width="94" height="32"/>
+                                                                <connections>
+                                                                    <action selector="stepperValueChange:" destination="g8b-sg-DQm" eventType="valueChanged" id="z8d-cW-iLW"/>
+                                                                </connections>
                                                             </stepper>
                                                         </subviews>
                                                     </stackView>
@@ -217,6 +220,9 @@
                                                                 <integer key="value" value="30"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="addToCartAction:" destination="g8b-sg-DQm" eventType="touchUpInside" id="RNB-4z-a3g"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -320,8 +326,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addToCartButton" destination="6LW-yx-J7p" id="zfh-2W-sNO"/>
+                        <outlet property="detailDescriptionTextView" destination="kAm-Jg-xmH" id="HdS-tL-6aY"/>
                         <outlet property="detailImageView" destination="ZIv-Gf-Mii" id="6qj-Sg-TfE"/>
                         <outlet property="detailLabel" destination="nXi-ci-JmE" id="JFz-hn-10C"/>
+                        <outlet property="numberOfItemsLabel" destination="0u8-fn-EOK" id="nkL-yZ-Spx"/>
+                        <outlet property="numberStepper" destination="2a0-8Y-RKv" id="bof-8R-WIf"/>
+                        <outlet property="priceLabel" destination="avt-50-PVh" id="2tO-Bg-wCx"/>
+                        <outlet property="weightLabel" destination="Hcw-zW-HNg" id="4VE-V3-hYT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q2N-Sf-JE5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
