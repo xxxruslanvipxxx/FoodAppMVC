@@ -94,8 +94,8 @@
 				14E8DC432B0FAFFF00FD0A17 /* ProfileVC.swift */,
 				14C706212B0E513A006DA3D0 /* MainMenuTVC.swift */,
 				14E8DC472B0FC21000FD0A17 /* ItemsCollectionVC.swift */,
-				14E8DC412B0FAD4F00FD0A17 /* CartTVC.swift */,
 				145D38352B17EEB000C3DAA1 /* DetailVC.swift */,
+				14E8DC412B0FAD4F00FD0A17 /* CartTVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

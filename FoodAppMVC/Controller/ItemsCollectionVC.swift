@@ -8,6 +8,7 @@
 import UIKit
 
 private let reuseIdentifier = "itemCell"
+private let showDetail = "showDetail"
 
 class ItemsCollectionVC: UICollectionViewController {
     
@@ -32,15 +33,17 @@ class ItemsCollectionVC: UICollectionViewController {
 
     }
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == showDetail {
+            if let detailVC = segue.destination as? DetailVC {
+                if let item = sender as? Item {
+                    detailVC.item = item
+                }
+            }
+        }
     }
-    */
 
     // MARK: UICollectionViewDataSource
 
@@ -94,6 +97,11 @@ class ItemsCollectionVC: UICollectionViewController {
     
     }
     */
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = itemsArray[indexPath.row]
+        performSegue(withIdentifier: showDetail, sender: item)
+    }
 
 }
 

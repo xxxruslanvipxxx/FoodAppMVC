@@ -52,7 +52,6 @@ class MainMenuTVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("row selected")
         let menuItem = menuItemsArray[indexPath.row]
         self.performSegue(withIdentifier: showItemsSegue, sender: menuItem)
     }

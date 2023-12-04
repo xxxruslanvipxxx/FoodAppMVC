@@ -11,4 +11,5 @@ struct Item {
     var name: String?
     var imageName: String?
     var price: Int?
+    var weight: Int?
 }
