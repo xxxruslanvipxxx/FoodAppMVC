@@ -122,7 +122,6 @@ extension ItemsCollectionVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let screenWidth = Double(view.window?.windowScene?.screen.bounds.width ?? 1)
-        print(screenWidth)
         let totalCellWidth = screenWidth - (edgeInset * Double((numberOfCellsInRow + 1)))
         let width = totalCellWidth / Double(numberOfCellsInRow)
         let height = width * 1.5

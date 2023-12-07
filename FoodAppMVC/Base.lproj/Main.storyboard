@@ -211,7 +211,7 @@
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="MJ2-Cd-355"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Add to Cart">
+                                                        <buttonConfiguration key="configuration" style="plain" title="Add to Cart • $15">
                                                             <color key="baseForegroundColor" name="AppColor"/>
                                                         </buttonConfiguration>
                                                         <userDefinedRuntimeAttributes>
@@ -274,7 +274,7 @@
                                                     <constraint firstAttribute="height" constant="55" id="fWm-It-fUI"/>
                                                 </constraints>
                                             </stackView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAm-Jg-xmH">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAm-Jg-xmH">
                                                 <rect key="frame" x="20" y="447.33333333333326" width="353" height="169"/>
                                                 <color key="backgroundColor" name="AppColor"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut </string>

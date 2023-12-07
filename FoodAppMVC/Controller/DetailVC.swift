@@ -9,8 +9,16 @@ import UIKit
 
 class DetailVC: UIViewController {
     
+    //MARK: - Constant Properties
+    let addToCartButtonRawTitle = "Add to Cart • $"
+    
     //MARK: - Variable Properties
     var item: Item?
+    var addToCartButtonTitle: String? {
+        guard let itemPrice = item?.price else {return "Add to Cart"}
+        let titleString = "\(addToCartButtonRawTitle)\(itemPrice)"
+        return titleString
+    }
     
     //MARK: - IBOutlets
     @IBOutlet weak var detailImageView: UIImageView! {
@@ -57,16 +65,32 @@ class DetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.addToCartButton.setTitle(addToCartButtonTitle, for: .normal)
+        
     }
     
     //MARK: - IBAActions
     @IBAction func stepperValueChange(_ sender: UIStepper) {
-        let value = Int(sender.value)
-        numberOfItemsLabel.text = "x\(value)"
+        let value = sender.value
+        
+        // update numberOfItemsLabel text
+        numberOfItemsLabel.text = "x\(Int(value))"
+        
+        // update addToCartButton title
+        if let price = item?.price {
+            let fullPrice = self.getFullPrice(with: price, and: value)
+            let titleString = "\(addToCartButtonRawTitle)\(fullPrice)"
+            self.addToCartButton.setTitle(titleString, for: .normal)
+        }
     }
     
     @IBAction func addToCartAction(_ sender: UIButton) {
         
+    }
+    
+    //MARK: - Func
+    private func getFullPrice(with price: Double, and count: Double) -> Double {
+        price * count
     }
     
     /*
